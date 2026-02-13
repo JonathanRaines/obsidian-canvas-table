@@ -1,6 +1,12 @@
 # Obsidian Canvas Table Generator
 
-A Rust CLI tool that generates Obsidian canvas files for literature review comparison tables. This tool creates a grid layout where each row represents a markdown file and each column represents a heading section within those files.
+A Rust CLI tool that generates Obsidian canvas files for comparison tables. This tool creates a grid layout where each row represents a markdown file and each column represents a heading section within those files.
+
+Store your data like this: 
+![Example files](images/papers.png)
+
+Compare it like this:
+![Example canvas](images/comparison.png)
 
 > Use of AI: This tool was created using Claude Sonnet 4.5 via the Zed Editor's AI console.
 
