@@ -1,0 +1,155 @@
+{
+  "nodes": [
+    {
+      "id": "f1cc043b60e3221e",
+      "type": "file",
+      "file": "example/Paper1.md",
+      "subpath": "#Model",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "eca7808b98b540ce",
+      "type": "file",
+      "file": "example/Paper1.md",
+      "subpath": "#Data",
+      "x": 420,
+      "y": 0,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "fee9d623a4afd9eb",
+      "type": "file",
+      "file": "example/Paper1.md",
+      "subpath": "#Metrics",
+      "x": 840,
+      "y": 0,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "cee1254e9dfbb4e5",
+      "type": "file",
+      "file": "example/Paper1.md",
+      "subpath": "#Evaluation",
+      "x": 1260,
+      "y": 0,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "9a81c2b958012892",
+      "type": "file",
+      "file": "example/Paper1.md",
+      "subpath": "#Limitations",
+      "x": 1680,
+      "y": 0,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "161c4c850f877b14",
+      "type": "file",
+      "file": "example/Paper2.md",
+      "subpath": "#Model",
+      "x": 0,
+      "y": 440,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "aed7fee67d09d153",
+      "type": "file",
+      "file": "example/Paper2.md",
+      "subpath": "#Data",
+      "x": 420,
+      "y": 440,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "e306a4e9cec16225",
+      "type": "file",
+      "file": "example/Paper2.md",
+      "subpath": "#Metrics",
+      "x": 840,
+      "y": 440,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "5a7063308f7a3b9d",
+      "type": "file",
+      "file": "example/Paper2.md",
+      "subpath": "#Evaluation",
+      "x": 1260,
+      "y": 440,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "f2493f28c7e501e5",
+      "type": "file",
+      "file": "example/Paper2.md",
+      "subpath": "#Limitations",
+      "x": 1680,
+      "y": 440,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "c2ea7eee04cc1a64",
+      "type": "file",
+      "file": "example/Paper3.md",
+      "subpath": "#Model",
+      "x": 0,
+      "y": 880,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "2e2be48b3ee48f6c",
+      "type": "file",
+      "file": "example/Paper3.md",
+      "subpath": "#Data",
+      "x": 420,
+      "y": 880,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "5eb3b9bd16b43c52",
+      "type": "file",
+      "file": "example/Paper3.md",
+      "subpath": "#Metrics",
+      "x": 840,
+      "y": 880,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "a2459ad743edd1f4",
+      "type": "file",
+      "file": "example/Paper3.md",
+      "subpath": "#Evaluation",
+      "x": 1260,
+      "y": 880,
+      "width": 400,
+      "height": 420
+    },
+    {
+      "id": "3141171b774f5cb9",
+      "type": "file",
+      "file": "example/Paper3.md",
+      "subpath": "#Limitations",
+      "x": 1680,
+      "y": 880,
+      "width": 400,
+      "height": 420
+    }
+  ],
+  "edges": []
+}
