@@ -1,4 +1,6 @@
+use chrono::NaiveDate;
 use clap::Parser;
+use regex::Regex;
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -72,8 +74,30 @@ fn generate_id() -> String {
     format!("{:016x}", hasher.finish())
 }
 
+fn extract_date_published(file_path: &Path) -> Option<NaiveDate> {
+    // Read the file content
+    let content = fs::read_to_string(file_path).ok()?;
+
+    // Check if file starts with YAML frontmatter (---)
+    if !content.starts_with("---") {
+        return None;
+    }
+
+    // Find the closing --- of frontmatter
+    let end_marker = content[3..].find("---")?;
+    let frontmatter = &content[3..3 + end_marker];
+
+    // Look for date_published: YYYY-MM-DD
+    let re = Regex::new(r"date_published:\s*(\d{4}-\d{2}-\d{2})").ok()?;
+    let captures = re.captures(frontmatter)?;
+    let date_str = captures.get(1)?.as_str();
+
+    // Parse the date
+    NaiveDate::parse_from_str(date_str, "%Y-%m-%d").ok()
+}
+
 fn find_markdown_files(folder: &Path) -> Vec<PathBuf> {
-    let mut files = Vec::new();
+    let mut files_with_dates = Vec::new();
 
     for entry in WalkDir::new(folder)
         .follow_links(true)
@@ -84,14 +108,25 @@ fn find_markdown_files(folder: &Path) -> Vec<PathBuf> {
         if path.is_file() {
             if let Some(extension) = path.extension() {
                 if extension == "md" {
-                    files.push(path.to_path_buf());
+                    let date = extract_date_published(path);
+                    files_with_dates.push((path.to_path_buf(), date));
                 }
             }
         }
     }
 
-    files.sort();
-    files
+    // Sort by date (most recent first), files without dates go to the end
+    files_with_dates.sort_by(|a, b| {
+        match (&a.1, &b.1) {
+            (Some(date_a), Some(date_b)) => date_b.cmp(date_a), // Most recent first
+            (Some(_), None) => std::cmp::Ordering::Less,        // Files with dates come first
+            (None, Some(_)) => std::cmp::Ordering::Greater,     // Files without dates come last
+            (None, None) => a.0.cmp(&b.0),                      // Both without dates: sort by path
+        }
+    });
+
+    // Return just the paths
+    files_with_dates.into_iter().map(|(path, _)| path).collect()
 }
 
 fn normalize_heading(heading: &str) -> String {
